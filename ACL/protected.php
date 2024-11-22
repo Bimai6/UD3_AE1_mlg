@@ -11,9 +11,17 @@ if (!isset($_SESSION["username"])){
 //Obtenemos los permisos del usuario
 $permissions=get_user_permissions($_SESSION["role_id"]);
 
+$nombre_del_rol= $_SESSION["role_id"] === 1 ? "Admin" : "User";
+
 //Verificamos si el usuario tiene el permiso necesario
 if (in_array("view_profile", $permissions)){
     //Mostramos el contenido del perfil para view_profile
+    echo "<h1> Datos del usuario: </h1>";
+    echo "<p> Rol del usuario:" . htmlspecialchars($nombre_del_rol) ." </p>";
+    foreach($permissions as $p){
+        echo "<p>  </p>";
+    }
+
 }else{
     //Mostramos un mensaje de error o lo redirigimos a otra página
 }

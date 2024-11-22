@@ -12,4 +12,5 @@
 
 <?php if (in_array("edit_profile", $permissions)): ?>
     <!-- Mostramos el botón de edición del perfil -->
+     
 <?php endif; ?>

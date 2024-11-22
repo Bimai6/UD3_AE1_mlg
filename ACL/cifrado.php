@@ -1,4 +1,4 @@
 <?php
-$password= "mario1234";
+$password= "micontraseña";
 $encryptedPassword= hash("sha256",$password);
 ?>
