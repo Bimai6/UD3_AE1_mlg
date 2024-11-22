@@ -1,6 +1,6 @@
 <form action="login.php" method="post">
     <div>
-        <label> for="username">Nombre de usuario:</label>
+        <label for="username">Nombre de usuario:</label>
         <input type="text" id="username" name="username">
     </div>
     <div>
