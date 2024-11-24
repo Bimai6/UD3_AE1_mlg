@@ -11,7 +11,5 @@ $bbdd = new mysqli($db_host, $db_user, $db_pass, $db_name);
 //Verificamos la conexión
 if ($bbdd->connect_error){
     die('Error de conexión a la base de datos:' . $db->connect_error);
-} else{
-    echo "Se estableció la conexión correctamente";
 }
 ?>
