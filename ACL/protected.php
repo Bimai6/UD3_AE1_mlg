@@ -11,6 +11,7 @@ if (!isset($_SESSION["username"])){
 //Obtenemos los permisos del usuario
 $permissions=get_user_permissions($_SESSION["role_id"]);
 
+//Variable con operador ternario para los dos posibles valores que puede tener
 $nombre_del_rol= $_SESSION["role_id"] === 1 ? "Admin" : "User";
 
 //Guardamos la información del usuario en cookies
@@ -20,10 +21,11 @@ setcookie("permissions", implode(", ", $permissions), time() + (86400));
 
 //Verificamos si el usuario tiene el permiso necesario
 if (in_array("view_profile", $permissions)){
-    //Mostramos el contenido del perfil para view_profile
+    //Mostramos el contenido del perfil
     echo "<h1> Bienvenido " . $_SESSION['username'] . "</h1>";
     echo "<p> Rol del usuario: " . htmlspecialchars($nombre_del_rol) ." </p>";
     echo "<p> Permisos del usuario:" . " </p>";
+    //Me pareció más limpio ponerlos así que con un echo implode y dejando los nombres de los permisos en ingles
     if(in_array("edit_profile", $permissions)){
         echo '<p> Puedes <span style="color: blue">editar</span> tu perfil </p>';
     };

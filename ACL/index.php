@@ -8,4 +8,9 @@
         <input type="password" id="password" name="password">
     </div>
     <input type="submit" value="Iniciar sesión">
+    <?php
+if (isset($_GET['error'])) {
+    echo "<p>Error: " . htmlspecialchars($_GET['error']) . "</p>";
+}
+?>
 </form>
